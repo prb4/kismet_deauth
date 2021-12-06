@@ -1,7 +1,7 @@
 import kismet_rest
 import deauthenticator
 import logging
-import pdb
+import time
 
 class Devices():
     device = None
@@ -89,6 +89,7 @@ class Devices():
                 continue
 
             client_mac = client['kismet.device.base.macaddr']
+            time.sleep(0.2)
             resp = deauthenticator.deauth(self.iface, self.num_deauth_packets, ap_mac_addr, client_mac)
             print(client)
 
