@@ -1,8 +1,9 @@
 import websocket
 import deauthenticator
 import json
-import pdb
 
+
+##### work in progress ######
 
 def got_message(msg):
     message = msg['MESSAGE']['kismet.messagebus.message_string']

