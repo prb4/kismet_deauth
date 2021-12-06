@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import pdb
+
+#https://gist.githubusercontent.com/bin3xish477/67111cd4ab9313b73a8639e959750903/raw/282076f81277685a35ff52d35ddc3821402fa530/deauthenticator.py
+
 from scapy.all import (
   RadioTap,    # Adds additional metadata to an 802.11 frame
   Dot11,       # For creating 802.11 frame
