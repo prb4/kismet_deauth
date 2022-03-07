@@ -1,3 +1,3 @@
 kismet_rest
 scapy
-websocket
+websocket-client
